@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+        }
+        label, input, button {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 8px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <title>form</title>
+</head>
+<body>
+    <h1>Login Form</h1>
+    <form method="post"> 
+        {% csrf_token %}
+
+        <label for="text">username</label>
+        <input type="text" id="text" name="username" required placeholder="Enter your username">
+        <label for="password">password</label>
+        <input type="password" id="password" name="password" required placeholder="Enter your password">
+        <button type="submit">Login</button>
+        <a href="{% url 'signup' %}">create a account</a>
+
+
+    </form>
+</body>
+</html>
